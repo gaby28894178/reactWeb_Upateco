@@ -1,0 +1,27 @@
+nav{
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: #f71212 solid 1px;
+}
+nav ol{
+    color: #f7560c;
+    text-decoration: none;    
+     /* aca les dejo un dato  */
+     display: flex;
+     flex-direction: row;
+
+    }
+nav ol  li{
+    color: #3d0644;
+    list-style: none;  
+    background-color: #f2f2f2;  
+
+}
+nav ol li a{
+    color: #eb390d;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+
+}
