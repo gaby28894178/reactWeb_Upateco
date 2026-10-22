@@ -2,15 +2,54 @@
 
 
 
-h1{
-    color: rgb(31, 28, 226);
-    font-size: 30px;
-    margin: 3px 10px  ;
+.characters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
 }
-p{
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 0;
+    text-align: center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 16px rgb(0 0 0 / 20%);
+    transform: translateY(-3px);
+}
+
+.card p {
     color: rgb(31, 28, 226);
     font-size: 20px;
-    margin: 30px 150px  ;
+    margin: 4px 0;
+    overflow-wrap: anywhere;
+}
 
+.card img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
 
+.card h1 {
+    color: rgb(31, 28, 226);
+    font-size: 30px;
+    margin: 3px 10px;
+    min-height: 2.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

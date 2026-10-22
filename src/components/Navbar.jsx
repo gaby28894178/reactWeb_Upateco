@@ -11,7 +11,7 @@ const Navbar = () => {
             <li className={style.li}><Link to="/">Inicio</Link></li>
             <li className={style.li}><Link to="/about">Nosotros</Link></li>
             <li className={style.li}><Link to="/contact">Contactos</Link></li>
-
+        
         </ol>
     </nav>
   
