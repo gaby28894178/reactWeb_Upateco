@@ -50,7 +50,8 @@ function Contact() {
       <h1>Contacto</h1>
       <p>Completa el formulario para ponerte en contacto.</p>
 
-      <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
+      <div className="contact-content">
+        <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
         {/* IMPORTANTE: Estos "name" deben coincidir EXACTAMENTE con las variables de tu plantilla en EmailJS */}
         <label htmlFor="contact-name">Nombre</label>
         <input id="contact-name" name="user_name" type="text" required />
@@ -70,7 +71,18 @@ function Contact() {
             {status.message}
           </p>
         )}
-      </form>
+        </form>
+
+        <div className="contact-map">
+          <iframe
+            title="Ubicación de la oficina"
+            src="https://www.google.com/maps?q=Buenos+Aires,+Argentina&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+      </div>
     </main>
   );
 }

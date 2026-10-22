@@ -44,12 +44,44 @@
     cursor: pointer;
 }
 
-.card h1 {
+.card h2 {
     color: rgb(31, 28, 226);
-    font-size: 30px;
-    margin: 3px 10px;
+    font-size: 24px;
+    margin: 10px 10px 6px;
     min-height: 2.4em;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.card img {
+    border-radius: 8px;
+}
+
+.home-hero {
+    padding: 16px;
+    text-align: center;
+}
+
+.home-hero h1 {
+    color: rgb(31, 28, 226);
+    font-size: 34px;
+    margin: 3px 0;
+}
+
+.home-hero p {
+    color: #444;
+    font-size: 18px;
+    margin: 8px 0 0;
+}
+
+.home-status {
+    color: rgb(31, 28, 226);
+    font-size: 20px;
+    padding: 16px;
+    text-align: center;
+}
+
+.home-status--error {
+    color: #b42318;
 }
