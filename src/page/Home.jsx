@@ -9,8 +9,9 @@ function Home() {
 
   useEffect(() => {
     let isCurrent = true;
+    const BASEURL = "https://pokeapi.co/api/v2/pokemon/ditto"
 
-    axios.get('https://rickandmortyapi.com/api/character')
+    axios.get(BASEURL)
       .then((response) => {
         if (isCurrent) setCharacters(response.data.results);
       })
