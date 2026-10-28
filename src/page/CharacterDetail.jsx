@@ -10,8 +10,10 @@ function CharacterDetail() {
 
   useEffect(() => {
     let isCurrent = true;
-const URLBASE = "https://pokeapi.co/api/v2/pokemon"
-    axios.get(`URLBASE/${id}`)
+    const URLBASE = "https://pokeapi.co/api/v2/pokemon";
+    
+
+    axios.get(`${URLBASE}/${id}`)
       .then((response) => {
         if (isCurrent) setCharacter(response.data);
       })
@@ -41,13 +43,12 @@ const URLBASE = "https://pokeapi.co/api/v2/pokemon"
     <section className="character-detail">
       <h1>{character.name.toUpperCase()}</h1>
       
-
       <img src={character.sprites.other['official-artwork'].front_default} alt={character.name} />
       <p>ID: {character.id}</p>
       <p>Altura: {character.height / 10} m</p>
       <p>Peso: {character.weight / 10} kg</p>
       <p>Tipos: {character.types.map(t => t.type.name).join(', ')}</p>
-     <p>HP: {character.stats.find(s => s.stat.name === 'hp').base_stat}</p>
+      <p>HP: {character.stats.find(s => s.stat.name === 'hp').base_stat}</p>
       
       <Link to="/">Volver al inicio</Link>
     </section>
