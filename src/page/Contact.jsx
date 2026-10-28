@@ -11,12 +11,12 @@ function Contact() {
     event.preventDefault();
     setStatus({ type: '', message: '' });
 
-    // Lectura de variables de entorno de Vite
+
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    // Verificación de seguridad
+
     if (!serviceId || !templateId || !publicKey || publicKey === 'TU_PUBLIC_KEY_AQUÍ') {
       setStatus({
         type: 'error',
@@ -27,9 +27,9 @@ function Contact() {
 
     setSending(true);
     try {
-      // Enviar el formulario usando EmailJS
+   
       await emailjs.sendForm(serviceId, templateId, formRef.current, {
-        publicKey: publicKey, // En versiones nuevas de EmailJS se pasa así
+        publicKey: publicKey, 
       });
       
       formRef.current.reset();
@@ -52,7 +52,7 @@ function Contact() {
 
       <div className="contact-content">
         <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
-        {/* IMPORTANTE: Estos "name" deben coincidir EXACTAMENTE con las variables de tu plantilla en EmailJS */}
+    
         <label htmlFor="contact-name">Nombre</label>
         <input id="contact-name" name="user_name" type="text" required />
 
