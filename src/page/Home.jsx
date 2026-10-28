@@ -9,7 +9,7 @@ function Home() {
 
   useEffect(() => {
     let isCurrent = true;
-    const BASEURL = "https://pokeapi.co/api/v2/pokemon/ditto"
+    const BASEURL = "https://pokeapi.co/api/v2/pokemon?limit=20"
 
     axios.get(BASEURL)
       .then((response) => {
