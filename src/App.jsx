@@ -45,7 +45,7 @@ export default App;
 //         <Route path="/" element={<Home />} />
 //         <Route path="/contact" element={<Contact />} />
 //         <Route path="/about" element={<About />} />
-//         {/* CAMBIA ESTA LÍNEA: De /character/:id a /pokemon/:id */}
+//      
 //         <Route path="/pokemon/:id" element={<CharacterDetail />} />
 //         <Route path="*" element={<All_Error />} />
 //       </Routes>

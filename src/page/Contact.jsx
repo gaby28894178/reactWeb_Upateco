@@ -11,13 +11,12 @@ function Contact() {
     event.preventDefault();
     setStatus({ type: '', message: '' });
 
-
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-
-    if (!serviceId || !templateId || !publicKey || publicKey === 'TU_PUBLIC_KEY_AQUÍ') {
+    // Validación limpia: solo comprueba que las tres variables existan y no estén vacías
+    if (!serviceId || !templateId || !publicKey) {
       setStatus({
         type: 'error',
         message: 'Falta configurar EmailJS. Revisa las variables VITE_EMAILJS en tu archivo .env',
@@ -27,7 +26,6 @@ function Contact() {
 
     setSending(true);
     try {
-   
       await emailjs.sendForm(serviceId, templateId, formRef.current, {
         publicKey: publicKey, 
       });
@@ -53,30 +51,30 @@ function Contact() {
       <div className="contact-content">
         <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
     
-        <label htmlFor="contact-name">Nombre</label>
-        <input id="contact-name" name="user_name" type="text" required />
+          <label htmlFor="contact-name">Nombre</label>
+          <input id="contact-name" name="user_name" type="text" required />
 
-        <label htmlFor="contact-email">Correo electrónico</label>
-        <input id="contact-email" name="user_email" type="email" required />
+          <label htmlFor="contact-email">Correo electrónico</label>
+          <input id="contact-email" name="user_email" type="email" required />
 
-        <label htmlFor="contact-message">Mensaje</label>
-        <textarea id="contact-message" name="message" rows="5" required />
+          <label htmlFor="contact-message">Mensaje</label>
+          <textarea id="contact-message" name="message" rows="5" required />
 
-        <button type="submit" disabled={sending}>
-          {sending ? 'Enviando...' : 'Enviar mensaje'}
-        </button>
+          <button type="submit" disabled={sending}>
+            {sending ? 'Enviando...' : 'Enviar mensaje'}
+          </button>
         
-        {status.message && (
-          <p className={`contact-notice contact-notice--${status.type}`} role={status.type === 'error' ? 'alert' : 'status'}>
-            {status.message}
-          </p>
-        )}
+          {status.message && (
+            <p className={`contact-notice contact-notice--${status.type}`} role={status.type === 'error' ? 'alert' : 'status'}>
+              {status.message}
+            </p>
+          )}
         </form>
 
         <div className="contact-map">
           <iframe
             title="Ubicación de la oficina"
-            src="https://www.google.com/maps?q=Buenos+Aires,+Argentina&output=embed"
+            src="https://google.com"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
