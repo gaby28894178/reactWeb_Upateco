@@ -11,7 +11,7 @@ export const All_Error = () => {
       
       <div style={{ margin: "20px 0" }}>
         <img 
-          src="https://unsplash.com" 
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eo9ZfMK3SwqKrIBLmfdgVwe2WEe36yf112wQ4M2etcSuwRWB4d-wJuvK&s=10" 
           alt="Página no encontrada" 
           style={{ maxWidth: "100%", height: "auto", borderRadius: "8px", maxHeight: "300px" }}
         />
