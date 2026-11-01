@@ -1,9 +1,8 @@
-import Footer from '../components/Footer';
 import ContactoFormulario from '../components/ContactoFormulario';
 import './Contact.css';
 
 const infoItems = [
-    { Icono: '✉️', titulo: 'Email', texto: 'gabgabrielligabriel@gmail.com' },
+    // { Icono: '✉️', titulo: 'Email', texto: 'gabgabrielligabriel@gmail.com' }, este no pongo por q es un poco  peligroso  pero es el mismo q  esta en la api 
     { Icono: '📞', titulo: 'Teléfono', texto: '+54 11 2167-4227' },
     { Icono: '📍', titulo: 'Dirección', texto: 'Moreno, Buenos Aires' },
     { Icono: '🕒', titulo: 'Horario', texto: 'Lunes a viernes, 9:00 – 18:00' },
@@ -50,7 +49,7 @@ function Contacto() {
                 </div>
             </main>
 
-            <Footer />
+     
         </div>
     );
 }

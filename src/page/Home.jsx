@@ -46,8 +46,7 @@ function PokemonCard({ pokemon }) {
     <article
       className="card"
       style={{
-        background: theme.bg,
-        borderColor: theme.border,
+        '--grad': theme.bg,
         '--glow': theme.glow,
         '--text': theme.text,
       }}
@@ -79,10 +78,11 @@ function Home() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const urlbase = 'https://pokeapi.co/api/v2/pokemon?limit=20'
 
   useEffect(() => {
     let isCurrent = true;
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=20')
+    axios.get(urlbase)
       .then(res => { if (isCurrent) setCharacters(res.data.results); })
       .catch(() => { if (isCurrent) setError('No se pudieron cargar los personajes.'); })
       .finally(() => { if (isCurrent) setLoading(false); });

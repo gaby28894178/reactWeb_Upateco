@@ -6,7 +6,7 @@ const ENDPOINT = `https://formspree.io/f/${key}`;
 
 function ContactoFormulario() {
     const [formulario, setFormulario] = useState({ nombre: '', email: '', mensaje: '' });
-    const [estado, setEstado] = useState('idle');
+    const [estado, setEstado] = useState(null);
 
     const manejarCambios = (e) => {
         setFormulario({ ...formulario, [e.target.name]: e.target.value });

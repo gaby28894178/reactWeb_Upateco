@@ -7,18 +7,24 @@ import Home from './page/Home';
 import CharacterDetail from './page/CharacterDetail';
 import { All_Error } from './page/All_Error';
 import './App.css';
+import Footer from './components/Footer';
 
 function App() {
   return (
-      <HashRouter> 
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pokemon/:id" element={<CharacterDetail />} />
-        <Route path="*" element={<All_Error />} />
-      </Routes>
+    <HashRouter>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/pokemon/:id" element={<CharacterDetail />} />
+            <Route path="*" element={<All_Error />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </HashRouter>
   );
 }
